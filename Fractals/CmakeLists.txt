@@ -1,0 +1,46 @@
+# Made with gen-cmake.py
+cmake_minimum_required (VERSION 3.8)
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
+# if (WIN32)
+#     set(CMAKE_C_COMPILER icx)
+#     set(CMAKE_CXX_COMPILER icx)
+# elseif (APPLE)
+#     set(CMAKE_OSX_DEPLOYMENT_TARGET 11)
+#     set(CMAKE_C_COMPILER clang)
+#     set(CMAKE_CXX_COMPILER clang++)
+# endif()
+#set(CMAKE_FC_COMPILER ifx)
+
+cmake_path(SET VCPKG $ENV{VCPKG_ROOT}) #because Windows and backslashes
+# if (WIN32)
+#     set(VCPKG_TARGET_TRIPLET x64-windows-static)
+# elseif (APPLE)
+#     set(VCPKG_TARGET_TRIPLET x64-osx-static)
+# endif()
+set(CMAKE_TOOLCHAIN_FILE ${VCPKG}/scripts/buildsystems/vcpkg.cmake)
+
+project("Julia")
+
+add_executable(${PROJECT_NAME} "Julia.c"
+    "../ressources/abstractions.c"
+    "../ressources/stb_image.c"
+)
+
+#it's not defined by default on Mac
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+    target_compile_definitions(${PROJECT_NAME} PRIVATE _DEBUG=1)
+endif()
+
+target_include_directories(${PROJECT_NAME} PRIVATE "../ressources")
+
+if (CMAKE_VERSION VERSION_GREATER 3.12)
+  set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 20)
+endif()
+
+
+find_package(glfw3 CONFIG REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE glfw)
+
+find_package(GLEW REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE GLEW::GLEW)

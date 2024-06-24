@@ -1,0 +1,9 @@
+{
+    "name": "cellular-automata",
+    "version-string": "0",
+    "dependencies": [
+        "glew",
+        "glfw3",
+        "glm"
+    ]
+}
