@@ -9,9 +9,6 @@ Eventually, I followed the [tutorials by Joey de Vries](https://learnopengl.com/
 One thing to know, is that I didn't really agree with the tutorials making classes for each components such as shaders and camera, but I did make a class that has a VAO, a VBO, and a shader program. It can also load textures and framebuffers.
 
 
-One thing to know, is that I didn't really agree with the tutorials making classes for each components such as shaders and camera, but I did make a class that has a VAO, a VBO, and a shader program. It can also load textures and framebuffers.
-
-
 
 ## Chaotic_attractor
 
@@ -80,16 +77,17 @@ Considering that the executables that I first compiled before work completely fi
 
 
 
-## Other projects
+## Not included
 
 There are things that I didn't include in this repository:
 - Tutorial: I already mentioned that one, it contains stuff that I made following Joey de Vries' tutorials. You can still see files that I used in the ressources folder.
 - 2D_physics: I didn't actually do anything with this, except prepare a dummy OpenGL project. I instead used OpenCV, but the most I did was bounce a red ball on the screen. With multiple, I couldn't even make them bounce against one another. I quickly abandoned it since it was the start of the 2022-2023 school year.
-- Particle_Life: after the Slime mold simulation and Conway's Game of Life, I wanted to try my hand at other systems with emergent behavior. I tried to do [Particle Life](https://www.youtube.com/watch?v=p4YirERTVF0), trying with the double framebuffer setup, and with a computer shader, but both results were underwhelming. I also tried Boids, or the simulation of flocking behavior, and while the result was better, it still wasn't that great.
+- Particle_Life: after the Slime mold simulation and Conway's Game of Life, I wanted to try my hand at other systems with emergent behavior. I attempted to do [Particle Life](https://www.youtube.com/watch?v=p4YirERTVF0), both with the double framebuffer setup, and with a computer shader, but the results were underwhelming. I also tried Boids, or the simulation of flocking behavior, and while the result was better, it still wasn't that great.
 - Stereoscopy: This was just a folder where I tested how to do stereoscopy. I was satisfied after I changed a program from the tutorial to be in 3D when crossing your eyes.
 - Langton's ant: I've talked about this one in my OpenCV repository. I couldn't manage to do it here, only using Python and OpenCV.
 
 ___
 
 *Originally, I had and would commit and push this repository to GitHub every time I cleaned up a project. However, Git and/or GitHub absolutely suck and decided to hit me with a merge conflict where there was none (it claimed there was conflicting changes in README.md, but I was just appending to it). After solving the conflict and pushing to GitHub, Slime_mold and Cellular_Automata had disappeared! I couldn't repair the damage so decided to delete the repository and remake it.*
-*Ah, it seems to have also deleted 9 files (including CMakeLists.txt) and a folder in Cellular_automata/src! More than that, all the source files in Slime_mold, including .sln and .vcxproj are gone too! Thankfully, I had a backup.*
+
+*That wasn't the best idea, in Cellular_automata, it deleted 9 files (including CMakeLists.txt) and a folder! More than that, all the source files in Slime_mold, including .sln and .vcxproj are gone too! Thankfully, I had a backup.*
