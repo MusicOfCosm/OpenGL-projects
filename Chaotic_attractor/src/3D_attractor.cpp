@@ -117,7 +117,7 @@ int main()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1); //Mac doesn't support beyond 4.1
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "OpenGL testing", NULL, NULL); //Fullscreen
+	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Chaotic attracor", NULL, NULL); //Fullscreen
 #endif
 #ifdef _DEBUG
 	/*specifies whether the context should be created in debug mode, which may
@@ -127,7 +127,7 @@ int main()
 
 #ifndef __APPLE__
 	//GLFWwindow* window = glfwCreateWindow(WIDTH/2, HEIGHT/2, "OpenGL testing", NULL, NULL); //Windowed
-	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "OpenGL testing", glfwGetPrimaryMonitor(), NULL); //Fullscreen
+	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Chaotic attracor", glfwGetPrimaryMonitor(), NULL); //Fullscreen
 #endif
 	if (window == NULL) { // glfwCreateWindow returns NULL if an error occurs
 		fprintf(stderr, "Failed to initialize GLFW window.\n");

@@ -69,11 +69,9 @@ So far, I had only been doing OpenGL projects using C++, but I wanted to see if 
 
 Inspired by [this video](https://www.youtube.com/watch?v=uc2yok_pLV4), I decided to do the same thing in openGL.
 
-This is the also the first project that I compiled for MacOS. I found out two annoying things about it: the first I figured out (and I couldn't find anything on the internet about), was that you had to double the viewport size on the Mac for some reason (something with the dpi maybe?).
-The second is partially due to C not having raw strings literals (unlike C++), which allow me to do the trick where I `#include` the shader files. Unfortunately, it seems the Mac doesn't take into account the path of the executable when using it, so I had to mess with `argv[0]` (the full path of the file) for the executable to read the shader files.
+This is the also the first project that I compiled for MacOS. Something annoying that I had to figured out (and I couldn't find anything on the internet about), was that you had to double the viewport size on the Mac for some reason (something with the dpi maybe?).
 
-...Or at least those were the problems before. I tested the project on the Mac before committing it to this repository, but it doesn't work properly anymore (except to tell me about shader errors): the screen is all black, even when telling the fragment shader to just output `vec4(1)`. I tested Chaotic attractor, since it's the other project that I have also compiled on the Mac, and while it does show something on the screen, it seems `glClear()` doesn't take effect. Furthermore, when printing GPU information to the terminal, the `glGetString()` are all replaced by `(null)`.
-Considering that the executables that I first compiled before work completely fine, I would guess that an update may have messed something up.
+Unfortunately, my Mac isn't running the project properly (maybe because of an update or age, I don't know), so I can't guarantee that it will work.
 
 
 
@@ -85,9 +83,3 @@ There are things that I didn't include in this repository:
 - Particle_Life: after the Slime mold simulation and Conway's Game of Life, I wanted to try my hand at other systems with emergent behavior. I attempted to do [Particle Life](https://www.youtube.com/watch?v=p4YirERTVF0), both with the double framebuffer setup, and with a computer shader, but the results were underwhelming. I also tried Boids, or the simulation of flocking behavior, and while the result was better, it still wasn't that great.
 - Stereoscopy: This was just a folder where I tested how to do stereoscopy. I was satisfied after I changed a program from the tutorial to be in 3D when crossing your eyes.
 - Langton's ant: I've talked about this one in my OpenCV repository. I couldn't manage to do it here, only using Python and OpenCV.
-
-___
-
-*Originally, I had and would commit and push this repository to GitHub every time I cleaned up a project. However, Git and/or GitHub absolutely suck and decided to hit me with a merge conflict where there was none (it claimed there was conflicting changes in README.md, but I was just appending to it). After solving the conflict and pushing to GitHub, Slime_mold and Cellular_Automata had disappeared! I couldn't repair the damage so decided to delete the repository and remake it.*
-
-*That wasn't the best idea, in Cellular_automata, it deleted 9 files (including CMakeLists.txt) and a folder! More than that, all the source files in Slime_mold, including .sln and .vcxproj are gone too! Thankfully, I had a backup.*

@@ -13,8 +13,8 @@ uniform sampler2D screenTexture;
 
 uniform bool blur;
 uniform int width; uniform int height;
-const float xoffset = 1.0 / width;
-const float yoffset = 1.0 / height;
+float xoffset = 1.0 / width;
+float yoffset = 1.0 / height;
 
 vec2 offsets[9] = vec2[] (
     vec2(-xoffset,  yoffset), // top-left
